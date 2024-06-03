@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="toggle-theme" onclick="toggleTheme()">🌙</button>
+    <div class="container">
+        <h1>OTP Generator</h1>
+        <div class="otp-box">
+            <p>Your OTP: <span id="otp"></span></p>
+            <p>Expires in: <span id="timer"></span> seconds</p>
+        </div>
+        <div class="verification-box">
+            <div class="otp-inputs">
+                <input type="text" id="otp-1" maxlength="1" oninput="moveToNext(this, 'otp-2')">
+                <input type="text" id="otp-2" maxlength="1" oninput="moveToNext(this, 'otp-3')">
+                <input type="text" id="otp-3" maxlength="1" oninput="moveToNext(this, 'otp-4')">
+                <input type="text" id="otp-4" maxlength="1" oninput="moveToNext(this, 'verify-button')">
+            </div>
+            <button id="verify-button" onclick="verifyOTP()">Verify OTP</button>
+            <p id="verification-result"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
